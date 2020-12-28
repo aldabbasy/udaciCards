@@ -1,21 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, StatusBar, AppRegistry } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './src/reducers'
+import { registerRootComponent } from 'expo'
 
-export default function App() {
+import Constants from 'expo-constants'
+
+import { setLocalNotification } from './src/utils/notifications'
+
+import { MainNavigator } from './src/routes'
+import DeckList from './src/components/DeckList'
+import { charcoal } from './src/utils/colors'
+
+function FlashCardsStatusBar({ backgroundColor, ...props }){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{backgroundColor, height: Constants.statusBarHeight}}>
+      <StatusBar translucent backgroundColor={backgroundColor} {...props} />
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default class App extends Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
+  render() {
+    return (
+      <Provider store={createStore(reducer)}>
+        <View style={{flex:1}}>
+          <FlashCardsStatusBar backgroundColor={charcoal} barStyle='light-content' />
+          <NavigationContainer>
+            <MainNavigator />
+          </NavigationContainer>
+          {/* <DeckList /> */}
+        </View>
+      </Provider>
+    )
+  }
+}
+AppRegistry.registerComponent('App', () => App)
+registerRootComponent(App)
