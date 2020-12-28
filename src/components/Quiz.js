@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import {  View, Text,  StyleSheet, TouchableOpacity, Platform, Animated } from 'react-native'
+import { View, Text,  StyleSheet, TouchableOpacity, Platform, Animated } from 'react-native'
 import {connect} from 'react-redux'
 import {setLocalNotification, clearLocalNotification} from '../utils/notifications'
 import {white, black, green, red, charcoal} from '../utils/colors'

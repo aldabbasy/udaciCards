@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
-import {View, Text, StyleSheet, Animated, TouchableOpacity} from 'react-native'
-import {black, blue, white} from '../utils/colors'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import {black, blue} from '../utils/colors'
 
 export default class Card extends Component {
 
     state = {
         showAnswer: false
     }
-    
-    // componentDidUpdate(nextProps) {
-    //     const {card} = this.props
-    //     if (card.question !== nextProps.card.question) {
-    //       this.reset()
-    //     }
-    // }
 
     reset() {
         this.setState({showAnswer: false})

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Text, TextInput, View, StyleSheet} from 'react-native'
+import { TextInput, View, StyleSheet} from 'react-native'
 
 import {connect} from 'react-redux'
 import {white, lightGray} from '../utils/colors'
