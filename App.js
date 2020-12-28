@@ -11,7 +11,6 @@ import Constants from 'expo-constants'
 import { setLocalNotification } from './src/utils/notifications'
 
 import { MainNavigator } from './src/routes'
-import DeckList from './src/components/DeckList'
 import { charcoal } from './src/utils/colors'
 
 function FlashCardsStatusBar({ backgroundColor, ...props }){
@@ -34,7 +33,6 @@ export default class App extends Component {
           <NavigationContainer>
             <MainNavigator />
           </NavigationContainer>
-          {/* <DeckList /> */}
         </View>
       </Provider>
     )
