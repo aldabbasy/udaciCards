@@ -10,6 +10,8 @@ This is the final assessment project for Udacity's React Native course.
 * install all project dependencies with `yarn install`
 * start the development server with `yarn start`
 
+** you can use `yarn web` to start expo in the browser and scan the qr code from your mobile expo application ** 
+
 ## Topics Covered in This Project:
 
 * Class React Components
